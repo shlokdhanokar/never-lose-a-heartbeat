@@ -1,0 +1,16 @@
+# Optional: start the official mock at boot (judges may start it themselves).
+# Put the official biosignal-mock binary at /opt/biosignal-mock/biosignal-mock.
+[Unit]
+Description=biosignal-mock (official sensor mock, unmodified)
+After=network.target
+
+[Service]
+Type=simple
+User=@USER@
+ExecStart=/opt/biosignal-mock/biosignal-mock --mode signal --seed 7 --duration 3600 --port 7100
+Restart=on-failure
+RestartSec=1
+Slice=raspi-limits.slice
+
+[Install]
+WantedBy=multi-user.target

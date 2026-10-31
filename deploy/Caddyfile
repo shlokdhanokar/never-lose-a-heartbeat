@@ -1,0 +1,6 @@
+# TLS termination for the cloud service. Caddy obtains and renews a free
+# Let's Encrypt certificate for @DOMAIN@ automatically.
+@DOMAIN@ {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8080
+}

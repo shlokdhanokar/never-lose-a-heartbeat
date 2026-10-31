@@ -1,0 +1,311 @@
+{
+  "name": "dev-full-drill",
+  "params": {
+    "name": "dev-full-drill",
+    "mode": "signal",
+    "seed": 7,
+    "speed": 4.0,
+    "duration": 600.0,
+    "faults": "corrupt=0.02,dup=0.02,stall=0.002,dropout=0.002",
+    "events": "15:cut,40:restore,55:kill,70:longkill,95:cloudkill,120:mockrestart,140:cut,150:restore,165:power",
+    "out": "D:\\Resume Building\\never-lose-a-heartbeat\\evidence",
+    "check_windows": 0
+  },
+  "platform": "win32",
+  "timeline": [
+    [
+      1.42,
+      "mock started"
+    ],
+    [
+      1.44,
+      "pipeline started"
+    ],
+    [
+      15.0,
+      "network cut"
+    ],
+    [
+      40.0,
+      "network restored"
+    ],
+    [
+      55.02,
+      "pipeline killed (kill -9)"
+    ],
+    [
+      56.03,
+      "pipeline restarted"
+    ],
+    [
+      70.02,
+      "pipeline killed and kept down longer than the mock buffer"
+    ],
+    [
+      76.03,
+      "pipeline restarted"
+    ],
+    [
+      95.01,
+      "cloud service killed (kill -9)"
+    ],
+    [
+      103.03,
+      "cloud service restarted"
+    ],
+    [
+      120.01,
+      "mock killed"
+    ],
+    [
+      120.9,
+      "mock restarted (new session)"
+    ],
+    [
+      140.0,
+      "network cut"
+    ],
+    [
+      150.0,
+      "network restored"
+    ],
+    [
+      165.02,
+      "power cut (mock + pipeline killed)"
+    ],
+    [
+      167.42,
+      "power restored (new mock session, pipeline restarted)"
+    ],
+    [
+      323.06,
+      "backlog drained"
+    ]
+  ],
+  "sessions": [
+    {
+      "session": "61aa4b77",
+      "completed_by_mock": false,
+      "device_export": {
+        "samples": 349334,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 9,
+        "lost_samples": 29632,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 349334,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 9,
+        "lost_samples": 29632,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 474,
+        "windows_checked_against_reference": 474,
+        "lines": 631,
+        "by_mode": {
+          "online": 474,
+          "offline": 157
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 0,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 42,
+          "median": 0.437,
+          "p99": 0.781,
+          "max": 0.804
+        }
+      }
+    },
+    {
+      "session": "887ce8c7",
+      "completed_by_mock": false,
+      "device_export": {
+        "samples": 127557,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 4,
+        "lost_samples": 12265,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 127557,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 4,
+        "lost_samples": 12265,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 175,
+        "windows_checked_against_reference": 175,
+        "lines": 204,
+        "by_mode": {
+          "online": 175,
+          "offline": 29
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 0,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 56,
+          "median": 0.428,
+          "p99": 0.71,
+          "max": 0.759
+        }
+      }
+    },
+    {
+      "session": "14903e5d",
+      "completed_by_mock": true,
+      "device_export": {
+        "samples": 464140,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 6,
+        "lost_samples": 15860,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 464140,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 6,
+        "lost_samples": 15860,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 600,
+        "windows_checked_against_reference": 600,
+        "lines": 600,
+        "by_mode": {
+          "online": 600,
+          "offline": 0
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 8,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 520,
+          "median": 0.45,
+          "p99": 5.272,
+          "max": 6.771
+        }
+      }
+    }
+  ],
+  "cli": {
+    "status": {
+      "lines": 1,
+      "json_ok": true
+    },
+    "sessions": {
+      "lines": 3,
+      "json_ok": true
+    },
+    "events": {
+      "lines": 20,
+      "json_ok": true
+    },
+    "results_online": {
+      "lines": 600,
+      "json_ok": true
+    },
+    "results_offline": {
+      "lines": 0,
+      "json_ok": true
+    },
+    "status_fields_ok": true,
+    "event_kinds": {
+      "start": 4,
+      "session_opened": 3,
+      "mode": 10,
+      "session_closed": 2,
+      "session_ended": 1
+    },
+    "status_after_stop": {
+      "daemon": "stopped",
+      "mode": "stopped"
+    },
+    "all_ok": true
+  },
+  "mode_switches": [
+    {
+      "event": "network cut",
+      "to": "offline",
+      "seconds": 3.98
+    },
+    {
+      "event": "network restored",
+      "to": "online",
+      "seconds": 3.21
+    },
+    {
+      "event": "network cut",
+      "to": "offline",
+      "seconds": 3.59
+    },
+    {
+      "event": "network restored",
+      "to": "online",
+      "seconds": 1.88
+    }
+  ],
+  "catch_up": [
+    {
+      "outage_real_s": 25.0,
+      "outage_data_s": 100,
+      "seconds_to_empty_backlog": 5.6
+    },
+    {
+      "outage_real_s": 10.0,
+      "outage_data_s": 40,
+      "seconds_to_empty_backlog": 1.9
+    }
+  ],
+  "pass": true,
+  "work_dir": "C:\\Users\\hp\\AppData\\Local\\Temp\\hb-drill-b8bf41p6"
+}

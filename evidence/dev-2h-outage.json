@@ -1,0 +1,111 @@
+{
+  "name": "dev-2h-outage",
+  "params": {
+    "name": "dev-2h-outage",
+    "mode": "signal",
+    "seed": 7,
+    "speed": 8.0,
+    "duration": 9000.0,
+    "faults": "",
+    "events": "30:cut,930:restore",
+    "out": "D:\\Resume Building\\never-lose-a-heartbeat\\evidence",
+    "check_windows": 900
+  },
+  "platform": "win32",
+  "timeline": [
+    [
+      1.42,
+      "mock started"
+    ],
+    [
+      1.44,
+      "pipeline started"
+    ],
+    [
+      30.0,
+      "network cut"
+    ],
+    [
+      930.01,
+      "network restored"
+    ],
+    [
+      1132.03,
+      "backlog drained"
+    ]
+  ],
+  "sessions": [
+    {
+      "session": "9f230545",
+      "completed_by_mock": true,
+      "device_export": {
+        "samples": 7200000,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 0,
+        "lost_samples": 0,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 7200000,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 0,
+        "lost_samples": 0,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 9000,
+        "windows_checked_against_reference": 900,
+        "lines": 16214,
+        "by_mode": {
+          "online": 9000,
+          "offline": 7214
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 0,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 205,
+          "median": 0.396,
+          "p99": 0.718,
+          "max": 0.75
+        }
+      }
+    }
+  ],
+  "mode_switches": [
+    {
+      "event": "network cut",
+      "to": "offline",
+      "seconds": 4.33
+    },
+    {
+      "event": "network restored",
+      "to": "online",
+      "seconds": 1.96
+    }
+  ],
+  "catch_up": [
+    {
+      "outage_real_s": 900.0,
+      "outage_data_s": 7200,
+      "seconds_to_empty_backlog": 56.9
+    }
+  ],
+  "pass": true,
+  "work_dir": "C:\\Users\\hp\\AppData\\Local\\Temp\\hb-drill-_610le6o"
+}

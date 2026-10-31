@@ -1,0 +1,22 @@
+[Unit]
+Description=Never Lose a Heartbeat - device pipeline
+After=network.target biosignal-mock.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=@USER@
+Group=@USER@
+ExecStart=/usr/bin/python3 /opt/hbpipe/pipeline --config /etc/hbpipe/pipeline.conf run
+# Crash or kill -9: back within about 1 s, well inside the mock's 10 s buffer.
+Restart=always
+RestartSec=1
+KillSignal=SIGTERM
+TimeoutStopSec=10
+Nice=-5
+Slice=raspi-limits.slice
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+# Optional container for the cloud service (any free container host with a
+# persistent volume mounted at /data).
+#   docker build -f deploy/Dockerfile.cloud -t hbcloud .
+#   docker run -d -p 8080:8080 -v hbdata:/data -e HBCLOUD_TOKEN=... hbcloud
+FROM python:3.12-slim
+WORKDIR /app
+COPY hbpipe ./hbpipe
+COPY cloud ./cloud
+ENV HBCLOUD_DB=/data/cloud.db HBCLOUD_HOST=0.0.0.0 HBCLOUD_PORT=8080
+VOLUME /data
+EXPOSE 8080
+CMD ["python", "-m", "cloud.server"]

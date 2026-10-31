@@ -1,0 +1,244 @@
+{
+  "name": "dev-signal-faults",
+  "params": {
+    "name": "dev-signal-faults",
+    "mode": "signal",
+    "seed": 7,
+    "speed": 4.0,
+    "duration": 600.0,
+    "faults": "corrupt=0.02,dup=0.02,stall=0.003,dropout=0.002",
+    "events": "20:cut,50:restore,65:kill,80:mockrestart,100:cut,112:restore,125:power",
+    "out": "D:\\Resume Building\\never-lose-a-heartbeat\\evidence"
+  },
+  "platform": "win32",
+  "timeline": [
+    [
+      1.42,
+      "mock started"
+    ],
+    [
+      1.44,
+      "pipeline started"
+    ],
+    [
+      20.0,
+      "network cut"
+    ],
+    [
+      50.0,
+      "network restored"
+    ],
+    [
+      65.01,
+      "pipeline killed (kill -9)"
+    ],
+    [
+      66.02,
+      "pipeline restarted"
+    ],
+    [
+      80.01,
+      "mock killed"
+    ],
+    [
+      80.92,
+      "mock restarted (new session)"
+    ],
+    [
+      100.0,
+      "network cut"
+    ],
+    [
+      112.0,
+      "network restored"
+    ],
+    [
+      125.02,
+      "power cut (mock + pipeline killed)"
+    ],
+    [
+      127.36,
+      "power restored (new mock session, pipeline restarted)"
+    ],
+    [
+      282.96,
+      "backlog drained"
+    ]
+  ],
+  "sessions": [
+    {
+      "session": "bd8cca6f",
+      "completed_by_mock": false,
+      "device_export": {
+        "samples": 216340,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 5,
+        "lost_samples": 13504,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 216340,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 5,
+        "lost_samples": 13504,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 288,
+        "lines": 420,
+        "by_mode": {
+          "online": 288,
+          "offline": 132
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 0,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 62,
+          "median": 0.426,
+          "p99": 0.721,
+          "max": 0.751
+        }
+      }
+    },
+    {
+      "session": "8e62ed3e",
+      "completed_by_mock": false,
+      "device_export": {
+        "samples": 128700,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 4,
+        "lost_samples": 12403,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 128700,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 4,
+        "lost_samples": 12403,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 177,
+        "lines": 239,
+        "by_mode": {
+          "online": 177,
+          "offline": 62
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 0,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 44,
+          "median": 0.401,
+          "p99": 0.684,
+          "max": 0.708
+        }
+      }
+    },
+    {
+      "session": "bc198d93",
+      "completed_by_mock": true,
+      "device_export": {
+        "samples": 438640,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 9,
+        "lost_samples": 41360,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 438640,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 9,
+        "lost_samples": 41360,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 600,
+        "lines": 600,
+        "by_mode": {
+          "online": 600,
+          "offline": 0
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 25,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 520,
+          "median": 0.478,
+          "p99": 6.551,
+          "max": 7.588
+        }
+      }
+    }
+  ],
+  "mode_switches": [
+    {
+      "event": "network cut",
+      "to": "offline",
+      "seconds": 4.81
+    },
+    {
+      "event": "network restored",
+      "to": "online",
+      "seconds": 2.27
+    },
+    {
+      "event": "network cut",
+      "to": "offline",
+      "seconds": 4.1
+    },
+    {
+      "event": "network restored",
+      "to": "online",
+      "seconds": 3.45
+    }
+  ],
+  "pass": true,
+  "work_dir": "C:\\Users\\hp\\AppData\\Local\\Temp\\hb-drill-5k8t01s9"
+}

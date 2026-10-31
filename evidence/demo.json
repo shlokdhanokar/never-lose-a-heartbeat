@@ -1,0 +1,272 @@
+{
+  "name": "demo",
+  "params": {
+    "name": "demo",
+    "mode": "signal",
+    "seed": 7,
+    "speed": 4.0,
+    "duration": 600.0,
+    "faults": "corrupt=0.02,dup=0.02,stall=0.003,dropout=0.002",
+    "events": "20:cut,50:restore,65:kill,80:mockrestart,125:power",
+    "out": "D:\\Resume Building\\never-lose-a-heartbeat\\evidence",
+    "check_windows": 0
+  },
+  "platform": "win32",
+  "timeline": [
+    [
+      1.42,
+      "mock started"
+    ],
+    [
+      1.44,
+      "pipeline started"
+    ],
+    [
+      20.0,
+      "network cut"
+    ],
+    [
+      50.0,
+      "network restored"
+    ],
+    [
+      65.02,
+      "pipeline killed (kill -9)"
+    ],
+    [
+      66.03,
+      "pipeline restarted"
+    ],
+    [
+      80.01,
+      "mock killed"
+    ],
+    [
+      80.9,
+      "mock restarted (new session)"
+    ],
+    [
+      125.03,
+      "power cut (mock + pipeline killed)"
+    ],
+    [
+      127.38,
+      "power restored (new mock session, pipeline restarted)"
+    ],
+    [
+      283.12,
+      "backlog drained"
+    ]
+  ],
+  "sessions": [
+    {
+      "session": "57065bc8",
+      "completed_by_mock": false,
+      "device_export": {
+        "samples": 220812,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 8,
+        "lost_samples": 13497,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 220812,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 8,
+        "lost_samples": 13497,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 294,
+        "windows_checked_against_reference": 294,
+        "lines": 425,
+        "by_mode": {
+          "online": 294,
+          "offline": 131
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 0,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 62,
+          "median": 0.444,
+          "p99": 0.784,
+          "max": 1.033
+        }
+      }
+    },
+    {
+      "session": "9bb99f1b",
+      "completed_by_mock": false,
+      "device_export": {
+        "samples": 129172,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 4,
+        "lost_samples": 12090,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 129172,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 4,
+        "lost_samples": 12090,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 177,
+        "windows_checked_against_reference": 177,
+        "lines": 181,
+        "by_mode": {
+          "online": 177,
+          "offline": 4
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 7,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 144,
+          "median": 0.441,
+          "p99": 6.112,
+          "max": 6.612
+        }
+      }
+    },
+    {
+      "session": "2c405285",
+      "completed_by_mock": true,
+      "device_export": {
+        "samples": 437440,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 9,
+        "lost_samples": 42560,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_export": {
+        "samples": 437440,
+        "duplicates": 0,
+        "wrong_values": 0,
+        "bad_lines": 0,
+        "loss_lines": 9,
+        "lost_samples": 42560,
+        "silent_missing": 0,
+        "conflicts": 0,
+        "examples": [],
+        "ok": true
+      },
+      "cloud_copy_identical_to_device": true,
+      "results": {
+        "windows_expected": 600,
+        "windows_checked_against_reference": 600,
+        "lines": 600,
+        "by_mode": {
+          "online": 600,
+          "offline": 0
+        },
+        "mismatches": 0,
+        "mismatch_examples": [],
+        "missing_online": 0,
+        "online_over_5s": {
+          "explained_by_injected_source_fault": 25,
+          "unexplained": 0
+        },
+        "online_latency_s": {
+          "windows": 520,
+          "median": 0.47,
+          "p99": 6.696,
+          "max": 8.169
+        }
+      }
+    }
+  ],
+  "cli": {
+    "status": {
+      "lines": 1,
+      "json_ok": true
+    },
+    "sessions": {
+      "lines": 3,
+      "json_ok": true
+    },
+    "events": {
+      "lines": 14,
+      "json_ok": true
+    },
+    "results_online": {
+      "lines": 600,
+      "json_ok": true
+    },
+    "results_offline": {
+      "lines": 0,
+      "json_ok": true
+    },
+    "status_fields_ok": true,
+    "event_kinds": {
+      "start": 3,
+      "session_opened": 3,
+      "mode": 5,
+      "session_closed": 2,
+      "session_ended": 1
+    },
+    "status_after_stop": {
+      "daemon": "stopped",
+      "mode": "stopped"
+    },
+    "all_ok": true
+  },
+  "mode_switches": [
+    {
+      "event": "network cut",
+      "to": "offline",
+      "seconds": 3.76
+    },
+    {
+      "event": "network restored",
+      "to": "online",
+      "seconds": 2.73
+    }
+  ],
+  "catch_up": [
+    {
+      "outage_real_s": 30.0,
+      "outage_data_s": 120,
+      "seconds_to_empty_backlog": 3.9
+    }
+  ],
+  "pass": true,
+  "work_dir": "C:\\Users\\hp\\AppData\\Local\\Temp\\hb-drill-29gm16ul"
+}

@@ -1,0 +1,19 @@
+[Unit]
+Description=Never Lose a Heartbeat - cloud service
+After=network.target
+
+[Service]
+Type=simple
+User=hbcloud
+Group=hbcloud
+WorkingDirectory=/opt/hbcloud
+ExecStart=/usr/bin/python3 -m cloud.server --db /var/lib/hbcloud/cloud.db --host 127.0.0.1 --port 8080 --token-file /etc/hbcloud/token
+Restart=always
+RestartSec=1
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/hbcloud
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

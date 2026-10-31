@@ -1,0 +1,26 @@
+[pipeline]
+# Mock sensor service on the board
+mock_host = 127.0.0.1
+mock_port = 7100
+
+# Where samples are kept (needs a few hundred MB per hour of data)
+data_dir = /var/lib/hbpipe
+
+# Cloud service (see deploy/install_cloud.sh). HTTPS recommended.
+cloud_url = https://YOUR-CLOUD-HOST
+cloud_token = PASTE-THE-TOKEN-FROM-THE-CLOUD-INSTALL
+
+# A name for this board, shown in the cloud
+device_id = pi4-bedside-01
+
+# Optional: certificate fingerprint from `pipeline pin-cert`, so uploads keep
+# working if the board's clock is set wrong.
+# tls_pins =
+
+# Tuning (defaults shown)
+# poll_interval = 0.5           seconds between reads of the mock; bounds power-cut loss
+# cloud_timeout = 3.0           a failed upload switches to offline mode
+# probe_interval = 2.0          how often the cloud is probed while offline
+# live_seconds = 15             newest data uploaded first after an outage
+# memory_buffer_seconds = 120   samples held in memory while the disk is full
+# ballast_mb = 64               reserve file released when the disk fills up

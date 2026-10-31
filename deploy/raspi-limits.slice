@@ -1,0 +1,10 @@
+# Holds the mock and the pipeline to Raspberry Pi-class resources when they run on a
+# bigger ARM64 VM: at most 4 CPU cores and 2 GB of memory, as the brief requires.
+# On a real Raspberry Pi 4 (4 cores) these limits are harmless.
+[Unit]
+Description=Raspberry Pi-class resource limits (4 cores, 2 GB)
+
+[Slice]
+AllowedCPUs=0-3
+MemoryMax=2G
+MemorySwapMax=0
